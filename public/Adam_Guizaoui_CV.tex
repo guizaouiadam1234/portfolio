@@ -1,0 +1,186 @@
+%-------------------------
+% CV en LaTeX (pdfLaTeX-ready - Format A4)
+% Basé sur : https://github.com/sb2nov/resume
+%-------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+% ----------------- Encodage & compatibilité ATS -----------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ----------------- Mise en page -----------------
+\usepackage[
+    a4paper,
+    top=1.2cm,
+    bottom=1.2cm,
+    left=1.4cm,
+    right=1.4cm
+]{geometry}
+
+% ----------------- Packages -----------------
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+% ----------------- Helvetica comme police principale -----------------
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ----------------- Configuration générale -----------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0pt}
+
+% Formatage des sections
+\titleformat{\section}{
+  \scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% ----------------- Commandes utilitaires -----------------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.0in, label={}, itemsep=4pt, topsep=2pt, parsep=0pt]
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.18in, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt]
+}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% ----------------- Début du document -----------------
+\begin{document}
+
+%%%%%%%%%%%% En-tête %%%%%%%%%%%%
+\begin{center}
+    {\Huge\scshape Adam Guizaoui} \\[3pt]
+    \small
+    +33 6 70 24 44 16 \quad $|$ \quad
+    \href{mailto:guizaouiadam@gmail.com}{guizaouiadam@gmail.com} \quad $|$ \quad
+    \href{https://github.com/guizaouiadam1234}{github.com/guizaouiadam1234}
+\end{center}
+\vspace{-4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Profil %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Profil}
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, parsep=0pt]
+\small{\item{
+    Ingénieur logiciel spécialisé en QA Automation, je conçois des systèmes de test performants et développe des solutions basées sur des agents IA autonomes pour automatiser les activités de validation logicielle. Mon expertise s'étend au développement Full-Stack, à l'architecture applicative et au déploiement Cloud (AWS, Docker). De l'automatisation des tests à la mise en production, je maîtrise l'ensemble du cycle de vie logiciel avec une approche orientée qualité, performance et fiabilité.
+}}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Formation %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Formation}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {IMT Nord Europe}{France}
+      {Cycle Ingénieur — Spécialisation Ingénierie Logicielle et Architecture Cloud}{2021 -- 2027 (prévu)}
+
+    \resumeSubheading
+      {Lycée Lyautey}{Casablanca, Maroc}
+      {Baccalauréat Général (Mention Très Bien) — Spécialités Mathématiques, Physique-Chimie}{2018 -- 2021}
+
+\resumeSubHeadingListEnd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Expérience %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Expérience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Wiiisdom}{France}
+      {Ingénieur QA}{Oct 2024 -- Présent}
+      \resumeItemListStart
+        \resumeItem{Conception et développement d'un moteur d'exécution parallélisé, réduisant la durée des pipelines de tests de 45 à 20 minutes (-56 \%).}
+        \resumeItem{Développement (en cours) d'un agent QA autonome basé sur les LLM, visant à automatiser la génération et la maintenance de tests E2E.}
+        \resumeItem{Développement d'un outil de visualisation des dépendances entre tests sous forme de graphes orientés (DAG), facilitant l'analyse des exécutions et le débogage.}
+        \resumeItem{Développement et maintenance de plus de 200 scénarios de tests E2E automatisés avec Playwright et CodeceptJS, selon le pattern Page Object Model (POM).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {COSELEC}{Dakar, Sénégal}
+      {Ingénieur Logiciel Full-Stack (Stagiaire)}{Juil 2026 -- Sep 2026}
+      \resumeItemListStart
+        \resumeItem{Analyse des processus opérationnels et rédaction du cahier des charges fonctionnel et technique pour la conception d'un ERP sur mesure.}
+        \resumeItem{Conception et développement d'un ERP Full-Stack sur mesure avec Vue.js, FastAPI et PostgreSQL.}
+        \resumeItem{Conteneurisation de l'application avec Docker et déploiement de l'infrastructure sur AWS (EC2, S3, RDS).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SEWS Cabind Maroc}{Maroc}
+      {Stagiaire Informatique}{Juin 2023 -- Août 2023}
+      \resumeItemListStart
+        \resumeItem{Conception d'une base de données MySQL pour la classification des produits de l'entreprise.}
+        \resumeItem{Développement d'outils internes d'automatisation avec C\#/.NET WinForms et participation à la maintenance de l'infrastructure informatique.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projets %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Projets}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {NexusAnalytics (Vue.js, FastAPI)}{}
+      \resumeItemListStart
+        \resumeItem{Développement d'une application analytique full-stack (API REST en Python, interface Vue.js) pour agréger et visualiser les statistiques de joueurs issues de l'API Riot Games.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {Spinning Alj (C\#)}{}
+      \resumeItemListStart
+        \resumeItem{Implémentation d'un moteur de rendu et de rotation 3D temps réel basé sur les quaternions.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Compétences Techniques %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compétences Techniques}
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, parsep=0pt]
+\small{\item{
+    \textbf{QA Automation \& IA :} Playwright, CodeceptJS, Tests E2E, Page Object Model (POM), LLM, Agents IA \\
+    \textbf{Développement :} Python, JavaScript/TypeScript, C\#, Java, Vue.js, FastAPI, .NET WinForms \\
+    \textbf{Cloud \& DevOps :} AWS (EC2, S3, RDS), Docker, GitLab CI/CD, Bitbucket Pipelines, Github Actions \\
+    \textbf{Bases de données :} PostgreSQL, MySQL, SQL \\
+    \textbf{Architecture \& Pratiques :} Exécution parallèle, graphes orientés (DAG), intégration de LLM \\
+    \textbf{Langues :} Arabe et français (natifs), anglais (C1 / 975 TOEIC), allemand (B2)
+}}
+\end{itemize}
+
+\end{document}
+
